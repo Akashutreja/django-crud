@@ -1,2 +1,7 @@
 venv/
 .env
+core/__pycache__
+core/management/__pycache__
+core/management/commands/__pycache__
+core/migrations/__pycache__
+crud/__pycache__

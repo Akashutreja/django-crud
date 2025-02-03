@@ -27,10 +27,8 @@ class Command(BaseCommand):
                     country = location_data.get('country', '')
                     coordinates = location_data.get('coordinates', [None, None])
                     latitude, longitude = coordinates if len(coordinates) == 2 else (None, None)
-
                     # Check if user with the same email exists
-                    user_data = UserData.objects.filter(email=email).first()
-
+                    user_data = UserData.objects.filter(name=name, country= country, city=city).first()
                     if user_data:
                         # Update the existing user data if the email exists
                         user_data.name = name
